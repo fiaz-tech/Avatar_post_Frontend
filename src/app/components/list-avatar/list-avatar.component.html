@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row card-group">
+    <div class="col-sm-6 col-md-4 col-lg-2" *ngFor="let avatar of avatars">
+
+      <div class="card">
+        <img class="card-img-top" src={{avatar.avatar}} alt="" data-bs-target="#staticBackdrop"
+        data-bs-toggle="modal" (click)="modalData(avatar)">
+        <div class="card-body">
+          <h5 class="card-title">{{avatar.name}}</h5>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <app-modal [avatar]="avatarData"></app-modal>
+</div>
